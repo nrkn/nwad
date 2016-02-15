@@ -7,9 +7,10 @@ Read/write WAD files, as used by Doom et al.
 ## Usage
 
 **NB**: All this module does is read from and write to the WAD data structure - 
-a WAD is a collection of "lumps" - to actually do anything interesting with the 
-WAD you will need to work with these lumps - a package to do that is underway, 
-this module serves as a base for that one.
+creating the appropriate file header, indices etc. A WAD is just a packed 
+collection of "lumps" - to actually do anything interesting with the WAD you 
+will need to work with these lumps - a package to do that is underway, this 
+module serves as a base for that one.
 
 ### nwad.load 
 
@@ -17,8 +18,8 @@ Takes a buffer and returns a WAD data structure:
 
 ```javascript
 {
-  "type": "IWAD",
-  "lumps": [] //an array of lumps
+  "type": "", //"IWAD" or "PWAD"
+  "lumps": [] //an array of lumps, as below
 }
 ```
 
@@ -53,8 +54,8 @@ Takes a WAD data structure (as above) and returns a buffer:
 ```javascript
 const fs = require( 'fs' )
 const nwad = require( 'nwad' )
+const getLumps = require( './some-module-for-getting-lumps-from-somewhere' )
 
-//get lumps from somewhere
 const wadBuffer = nwad.save({
   type: 'PWAD',
   lumps: getLumps()
