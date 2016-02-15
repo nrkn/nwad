@@ -9,8 +9,8 @@ Read/write WAD files, as used by Doom et al.
 **NB**: All this module does is read from and write to the WAD data structure - 
 reading or creating the appropriate file header, indices etc. A WAD is just a 
 packed collection of "lumps" - to actually do anything interesting with the WAD 
-you will need to work with these lumps - a package to do that is underway, this 
-module serves as a base for that one.
+you will need to work with these lumps - [nlump](https://github.com/nrkn/nlump) 
+is underway, this module serves as a base for that one.
 
 ### nwad.load 
 
