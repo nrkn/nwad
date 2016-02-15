@@ -1,0 +1,21 @@
+{
+  "name": "nwad",
+  "version": "0.0.1",
+  "description": "Read/write WAD files (Doom et al)",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/nrkn/nwad.git"
+  },
+  "keywords": [
+    "doom",
+    "wad",
+    "lumps"
+  ],
+  "author": "Nik Coughlin <nrkn.com@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nrkn/nwad/issues"
+  },
+  "homepage": "https://github.com/nrkn/nwad#readme"
+}
