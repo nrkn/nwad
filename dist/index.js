@@ -6,7 +6,7 @@ exports.load = (data) => {
     const header = getHeader(view);
     const type = header.typeId;
     const infoTable = getInfoTable(view, header);
-    const getLumpData = (info) => data.slice(info.filePosition, info.filePosition + info.size);
+    const getLumpData = (info) => new Uint8Array(data.slice(info.filePosition, info.filePosition + info.size));
     const lumps = infoTable.map(info => ({
         name: info.name,
         data: getLumpData(info)

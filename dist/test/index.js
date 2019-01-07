@@ -10,6 +10,12 @@ describe('nwad', () => {
         assert.strictEqual(wad.type, 'PWAD');
         assert.strictEqual(wad.lumps.length, 11);
     });
+    it('copies lumps so underlying buffer is not whole file', () => {
+        const wad = __1.load(testWadData);
+        wad.lumps.forEach(lump => {
+            assert.strictEqual(lump.data.byteLength, lump.data.buffer.byteLength);
+        });
+    });
     it('saves a WAD', () => {
         const wad = __1.load(testWadData);
         const outWadData = __1.save(wad);

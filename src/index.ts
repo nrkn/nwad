@@ -9,7 +9,9 @@ export const load = ( data: Uint8Array ) => {
   const infoTable = getInfoTable( view, header )
 
   const getLumpData = ( info: WadInfo ) =>
-    data.slice( info.filePosition, info.filePosition + info.size )
+    new Uint8Array(
+      data.slice( info.filePosition, info.filePosition + info.size )
+    )
 
   const lumps = infoTable.map(
     info => ( <Lump>{
